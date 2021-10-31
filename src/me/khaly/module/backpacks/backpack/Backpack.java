@@ -76,7 +76,9 @@ public class Backpack {
 		builder.closeAction((event) -> {
 			Inventory inventory = event.getInventory();
 			
-			items.clear();
+			if(!items.isEmpty()) {
+				items.clear();
+			}
 			
 			for(int i = 0; i < inventory.getSize(); i++) {
 				ItemStack item = inventory.getItem(i);
